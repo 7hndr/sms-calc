@@ -17,7 +17,7 @@ body {
 
 #sms {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
 	grid-gap: 1rem;
 	text-align: center;
 	margin: auto;

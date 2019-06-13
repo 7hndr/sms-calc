@@ -1,0 +1,109 @@
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(to bottom, rgb(111, 95, 95) 0%, rgb(146, 176, 181) 100%);
+	height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
+	color: #222;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#sms {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 1rem;
+	text-align: center;
+	margin: auto;
+	width: 80vw;
+	margin-top: 5rem;
+}
+
+div textarea {
+	resize: none;
+	color: #222;
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	padding: .5rem;
+	width: 25rem;
+	height: 10rem;
+	background: #f2f2f2;
+	border: solid #222 .05rem;
+}
+
+.control {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: .5rem;
+	width: 25rem;
+	font-weight: bold;
+	margin: auto;
+	text-align: start;
+}
+
+button {
+	height: 2rem;
+	display: inline-block;
+	color: #222;
+	border-radius: .1rem;
+	border: solid #222 .05rem;
+	margin-bottom: .5rem;
+	font-weight: 800;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	background: transparent;
+	transition: .2s ease-in-out;
+}
+
+button:hover {
+	background-color: rgba(111, 95, 95, .5);
+	outline: none;
+}
+
+.spoiler input,
+.spoiler div {
+	display: none;
+}
+
+.spoiler :checked ~ div {
+	display: block;
+}
+
+.spoiler label::before {
+	content: '►';
+	margin-right: 5px;
+}
+
+.spoiler :checked + label::before {
+	content: '▼';
+}
+
+.spoiler p {
+	text-align: left;
+	width: 60vw;
+	margin: auto;
+}
+
+.spoiler ul {
+	text-align: left;
+	margin-left: 1rem;
+	width: 60vw;
+	margin: auto;
+	margin-top: 1rem;
+}
+
+.spoiler ul li {
+	margin-left: 3rem;
+	margin-top: 1rem;
+}
+
+.spoiler label {
+	font-weight: 700;
+	margin-bottom: 1rem;
+}

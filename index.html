@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>SMS</title>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,500,500i,700,700i,900,900i&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<!-- CSS -->
+	<link href="css/main.css" rel="stylesheet">
+	<script src="js/vue.js"></script>
+</head>
+
+<body>
+
+	<div id="sms">
+
+		<h1>Расчёт количества SMS на текст</h1>
+
+		<div class="spoiler">
+			<input type="checkbox" id="spoiler1">
+			<label for="spoiler1">А знаете ли Вы...</label>
+			<div>
+				<p>Исторически, в одном SMS-сообщении отводилось 140 байт непосредственно на текст сообщения. Поэтому, в зависимости от применяемой кодировки максимальная длина SMS вычислялась по-разному:</p>
+				<ul>
+					<li>на латинице [GSM 03.38] — 160 символов. Это достигается как раз за счет уплотненной упаковки байтов (использование только 7 бит для символа); длина сообщения увеличивается до 160 символов, как 140 * 8 / 7 = 160 символов;</li>
+					<li>на кириллице [UCS2] — 70 символов. Для кодирования одного символа отводится ровно два байта, как 140 / 2 = 70 символов.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="text">
+			<textarea v-on:keyup="numOfSms()" v-model="message" placeholder="Введите текст.."></textarea>
+		</div>
+
+		<div class="control">
+			<button v-on:click="translitePls(), numOfSms()">Транслит</button> <button v-on:click="returnMsg(), numOfSms()">Вернуть</button>
+			<span>Кол-во символов: {{ message.length }}</span>
+			<span>Кол-во SMS: {{ Math.ceil(smsLength) }}</span>
+		</div>
+	</div>
+
+
+
+	<!-- Scripts -->
+	<script src="js/main.js"></script>
+</body>
+
+</html>
